@@ -14,8 +14,44 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" />
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Core Theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        .donation-card {
+            transition: all 0.3s ease;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.15);
+        }
+
+        .donation-btn {
+            transition: all 0.3s ease;
+        }
+
+        .donation-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.3);
+        }
+
+        .donation-btn:active {
+            transform: scale(0.98);
+        }
+
+        .icon-wrapper {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +85,7 @@
                         Empowering Youth • Protecting Environment • Serving Community
                     </h3>
 
-                    <a href="#about" class="btn btn-lg btn-primary">
+                    <a href="#donate" class="btn btn-lg btn-primary">
                         Discover FTCI
                     </a>
 
@@ -59,6 +95,103 @@
         </div>
     </div>
 </header>
+
+<!-- Donation Section -->
+<section id="donate" class="py-12 md:py-20 bg-gradient-to-b from-white to-green-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Support Our Mission
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Your small help can create a big impact for communities and youth.
+            </p>
+        </div>
+
+        <!-- Donation Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 lg:gap-8 mb-12">
+            <!-- PayPal Donation Card -->
+            <div class="donation-card bg-white rounded-2xl p-8 md:p-6 lg:p-8 border-2 border-transparent hover:border-green-500 shadow-lg">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="icon-wrapper">
+                        <i class="bi bi-paypal text-4xl md:text-5xl text-blue-600"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 text-center mb-3">
+                    Donate via PayPal
+                </h3>
+                <p class="text-gray-600 text-center mb-6">
+                    Fast, secure, and convenient. Support FTCI with just a few clicks.
+                </p>
+                <div class="text-center">
+                    <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="donation-btn inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full shadow-md">
+                        <i class="bi bi-heart-fill mr-2"></i>Donate Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- GCash Donation Card -->
+            <div class="donation-card bg-white rounded-2xl p-8 md:p-6 lg:p-8 border-2 border-transparent hover:border-green-500 shadow-lg">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="icon-wrapper">
+                        <i class="bi bi-cash-coin text-4xl md:text-5xl text-green-600"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 text-center mb-3">
+                    Send via GCash
+                </h3>
+                <p class="text-gray-600 text-center mb-4">
+                    Direct mobile payment for instant donations
+                </p>
+                <div class="bg-green-50 rounded-xl p-4 mb-6 border-2 border-green-200">
+                    <p class="text-sm text-gray-600 text-center mb-2">GCash Number:</p>
+                    <p class="text-2xl font-bold text-green-600 text-center tracking-wider">
+                        09272278612
+                    </p>
+                </div>
+                <div class="text-center">
+                    <button onclick="navigator.clipboard.writeText('09272278612'); alert('GCash number copied to clipboard!')" 
+                            class="donation-btn inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full shadow-md">
+                        <i class="bi bi-files mr-2"></i>Copy Number
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact Section -->
+        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                <i class="bi bi-star-fill mr-2"></i>Every Donation Matters
+            </h3>
+            <p class="text-lg md:text-xl opacity-95 max-w-3xl mx-auto leading-relaxed">
+                Your contribution directly supports youth empowerment programs, environmental conservation projects, 
+                and community development initiatives across the Philippines.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div>
+                    <p class="text-3xl font-bold">100%</p>
+                    <p class="text-sm opacity-90">Transparent Use</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold">24/7</p>
+                    <p class="text-sm opacity-90">Impact</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold">∞</p>
+                    <p class="text-sm opacity-90">Possibilities</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold">✓</p>
+                    <p class="text-sm opacity-90">Secure</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Features -->
 <section class="features-icons bg-light text-center">
