@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- SEO Meta Tags for Search Engines -->
-    <meta name="description" content="FTCI (FANATXT TEXTERS CLUB INC.) - Empowering Filipino youth through leadership development, environmental conservation, and community service programs. Join us in making a difference." />
+    <meta name="description" content="FTCI (FANATXT TEXTERS CLUB INC.) - Empowering Filipino youth through leadership development, environmental conservation, and community service programs. Join us today!" />
     <meta name="keywords" content="FTCI, FANATXT TEXTERS CLUB, nonprofit, youth empowerment, environmental action, community service, Philippines, volunteer" />
     <meta name="author" content="FANATXT TEXTERS CLUB INC." />
     <meta name="robots" content="index, follow" />
@@ -42,13 +42,17 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
-        /* Hero Section */
+        /* Hero Section - Professional Cinematic Background */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/ftci-group.jpg');
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.6) 100%), 
+                        url('assets/img/ftci-group.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center 35%;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             animation: fadeIn 0.8s ease-out;
+            filter: brightness(1.05) contrast(1.08);
+            position: relative;
         }
 
         @keyframes fadeIn {
@@ -199,84 +203,19 @@
                 padding: 0.75rem 0;
                 color: #374151;
                 text-decoration: none;
-                transition: color 0.3s;
+                transition: color 0.3s ease;
             }
 
             #mobile-menu a:hover {
                 color: #22c55e;
             }
-        }
 
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid #22c55e;
-            outline-offset: 2px;
-        }
-
-        /* Hero CTA Button Styles */
-        .btn-primary-hero {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            font-weight: 700;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary-hero:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(34, 197, 94, 0.3);
-            background: linear-gradient(135deg, #16a34a, #15803d);
-        }
-
-        .btn-primary-hero:focus-visible {
-            outline: 2px solid white;
-            outline-offset: 2px;
-        }
-
-        /* Redundancy Fix: Single CTA in nav */
-        .nav-cta {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-            min-height: 40px;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(34, 197, 94, 0.3);
-            background: linear-gradient(135deg, #16a34a, #15803d);
-        }
-
-        .nav-cta:focus-visible {
-            outline: 2px solid white;
-            outline-offset: 2px;
+            /* Hero responsive background position */
+            .hero-bg {
+                background-attachment: scroll;
+                background-position: center 30%;
+                min-height: 80vh;
+            }
         }
     </style>
 </head>
@@ -284,94 +223,87 @@
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-light bg-white static-top shadow-sm sticky-top" role="navigation" aria-label="Main navigation">
+<nav class="navbar navbar-light bg-white static-top shadow-sm sticky-top">
     <div class="container">
-        <a class="navbar-brand font-bold text-lg" href="#home" aria-label="FTCI Home - FANATXT TEXTERS CLUB INC.">
+        <a class="navbar-brand font-bold text-lg" href="#home">
             <i class="bi bi-leaf-fill text-success"></i> FTCI
         </a>
 
         <!-- Desktop Navigation -->
-        <div id="desktop-nav" class="d-flex gap-3 items-center">
-            <a href="#about" class="text-gray-700 hover:text-green-600 transition font-medium text-sm">About</a>
-            <a href="#programs" class="text-gray-700 hover:text-green-600 transition font-medium text-sm">Programs</a>
-            <a href="#volunteer" class="nav-cta">
-                <i class="bi bi-hand-thumbs-up"></i>Get Involved
-            </a>
+        <div id="desktop-nav" class="d-flex gap-2">
+            <a class="btn btn-sm btn-outline-success" href="#donate-section">Donate</a>
+            <a class="btn btn-sm btn-success" href="#volunteer">Join Us</a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
             <i class="bi bi-list"></i>
         </button>
     </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="container" role="region" aria-label="Mobile navigation">
-        <a href="#home" class="block text-gray-700 hover:text-green-600 transition py-2 font-medium">Home</a>
-        <a href="#about" class="block text-gray-700 hover:text-green-600 transition py-2 font-medium">About</a>
-        <a href="#programs" class="block text-gray-700 hover:text-green-600 transition py-2 font-medium">Programs</a>
-        <a href="#volunteer" class="block text-gray-700 hover:text-green-600 transition py-2 font-medium">Get Involved</a>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="container">
+        <a href="#donate-section" class="d-block mb-2">Donate</a>
+        <a class="btn btn-sm btn-success w-100" href="#volunteer">Join Us</a>
     </div>
 </nav>
 
 <!-- Hero Section -->
-<section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden" role="region" aria-label="Hero section">
-    <div class="absolute inset-0"></div>
+<section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden" style="min-height: 100vh;">
     <div class="container mx-auto px-4 relative z-10 text-center">
-        <div class="fade-in max-w-4xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <div class="fade-in max-w-3xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 FANATXT TEXTERS CLUB INC.
             </h1>
-            <p class="text-lg sm:text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Empowering youth, protecting the environment, and serving communities across the Philippines through leadership, volunteerism, and social responsibility.
+            <p class="text-xl md:text-2xl text-gray-100 mb-10 leading-relaxed">
+                FTCI continues to serve communities through youth empowerment, environmental conservation, outreach programs, and gift-giving projects.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#volunteer" class="btn-primary-hero" aria-label="Get involved with FTCI">
-                    <i class="bi bi-arrow-right"></i>Get Involved Today
+                <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="btn-hover inline-block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg">
+                    <i class="bi bi-heart-fill mr-2"></i>Donate Now
                 </a>
-                <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="btn-hover inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-green-600 font-bold py-4 px-8 rounded-lg shadow-lg" aria-label="Support FTCI via PayPal">
-                    <i class="bi bi-heart-fill"></i>Support Us
+                <a href="#volunteer" class="btn-hover inline-block bg-white hover:bg-gray-100 text-green-600 font-bold py-4 px-8 rounded-lg shadow-lg">
+                    <i class="bi bi-people-fill mr-2"></i>Join Volunteers
                 </a>
             </div>
         </div>
     </div>
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#about" class="text-white opacity-75 hover:opacity-100 transition" aria-label="Scroll to about section">
+        <a href="#about" class="text-white opacity-75 hover:opacity-100 transition">
             <i class="bi bi-chevron-down text-2xl"></i>
         </a>
     </div>
 </section>
 
 <!-- About FTCI Section -->
-<section id="about" class="py-20 bg-white" role="region" aria-label="About FTCI">
+<section id="about" class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Who We Are</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Learn more about FANATXT TEXTERS CLUB INC. and our mission</p>
+            <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">About FTCI</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <img src="assets/img/ftci-chilfren2025.jpg" alt="FTCI youth volunteers engaging with community children in empowerment program" class="rounded-lg shadow-lg w-full" loading="lazy">
+                <img src="assets/img/ftci-chilfren2025.jpg" alt="FTCI Community" class="rounded-lg shadow-lg w-full">
             </div>
             <div>
-                <h3 class="text-3xl font-bold text-gray-900 mb-6">About FTCI</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h3>
                 <p class="text-gray-700 text-lg mb-4 leading-relaxed">
-                    <strong>FANATXT TEXTERS CLUB INC. (FTCI)</strong> is a nonprofit youth-serving organization in the Philippines dedicated to creating positive change in communities through leadership, volunteerism, environmental protection, and social responsibility.
+                    FANATXT TEXTERS CLUB INC. (FTCI) is a nonprofit youth-serving organization in the Philippines dedicated to creating positive change in communities through leadership, volunteerism, environmental protection, and social responsibility.
                 </p>
                 <p class="text-gray-700 text-lg mb-6 leading-relaxed">
                     Founded on the principle that every young person has the power to make a difference, FTCI empowers Filipino youth to become agents of change in their communities and the environment.
                 </p>
-                <ul class="space-y-3" role="list">
-                    <li class="flex items-center text-gray-700" role="listitem">
+                <ul class="space-y-3">
+                    <li class="flex items-center text-gray-700">
                         <i class="bi bi-check-circle-fill text-green-500 mr-3 text-xl"></i>
                         <span>Youth Leadership Programs</span>
                     </li>
-                    <li class="flex items-center text-gray-700" role="listitem">
+                    <li class="flex items-center text-gray-700">
                         <i class="bi bi-check-circle-fill text-green-500 mr-3 text-xl"></i>
                         <span>Environmental Conservation Initiatives</span>
                     </li>
-                    <li class="flex items-center text-gray-700" role="listitem">
+                    <li class="flex items-center text-gray-700">
                         <i class="bi bi-check-circle-fill text-green-500 mr-3 text-xl"></i>
                         <span>Community Outreach Programs</span>
                     </li>
@@ -382,7 +314,7 @@
 </section>
 
 <!-- Mission & Vision Section -->
-<section class="py-20 bg-gradient-to-r from-green-50 to-blue-50" role="region" aria-label="Mission and vision">
+<section class="py-20 bg-gradient-to-r from-green-50 to-blue-50">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="card-hover bg-white p-8 rounded-lg shadow-lg">
@@ -408,11 +340,11 @@
 </section>
 
 <!-- Impact Statistics -->
-<section class="py-20 bg-gradient-to-r from-green-500 to-green-600 text-white" role="region" aria-label="Impact statistics">
+<section class="py-20 bg-gradient-to-r from-green-500 to-green-600 text-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold mb-4">Our Impact</h2>
-            <p class="text-xl opacity-90">Making a measurable difference in Filipino communities</p>
+            <p class="text-xl opacity-90">Making a difference in Filipino communities</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="stat-counter text-center">
@@ -429,18 +361,17 @@
             </div>
             <div class="stat-counter text-center">
                 <div class="text-5xl font-bold mb-2">100%</div>
-                <p class="text-lg opacity-90">Transparent Operations</p>
+                <p class="text-lg opacity-90">Transparent Use</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Programs & Projects Section -->
-<section id="programs" class="py-20 bg-white" role="region" aria-label="Our programs">
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Discover the initiatives changing lives and communities</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="card-hover bg-gradient-to-br from-green-50 to-white p-8 rounded-lg border border-green-200">
@@ -480,7 +411,7 @@
 </section>
 
 <!-- Photo Gallery -->
-<section class="py-20 bg-gray-50" role="region" aria-label="Photo gallery">
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Photo Gallery</h2>
@@ -488,39 +419,39 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="gallery-item">
-                <img src="assets/img/ftci-chilfren2025.jpg" alt="FTCI youth empowerment program with children" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-chilfren2025.jpg" alt="Youth Program" class="w-full h-64 object-cover">
             </div>
             <div class="gallery-item">
-                <img src="assets/img/ftci-outreach1.jpg" alt="FTCI community outreach program" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-outreach1.jpg" alt="Outreach Program" class="w-full h-64 object-cover">
             </div>
             <div class="gallery-item">
-                <img src="assets/img/ftci-giftgiving2025.jpg" alt="FTCI gift-giving program" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-giftgiving2025.jpg" alt="Gift Giving" class="w-full h-64 object-cover">
             </div>
             <div class="gallery-item">
-                <img src="assets/img/ftci-giftgiving2023.jpg" alt="FTCI community service initiative" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-giftgiving2023.jpg" alt="Community Service" class="w-full h-64 object-cover">
             </div>
             <div class="gallery-item">
-                <img src="assets/img/ftci-chilfren2023.jpg" alt="FTCI youth engagement event" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-chilfren2023.jpg" alt="Youth Engagement" class="w-full h-64 object-cover">
             </div>
             <div class="gallery-item">
-                <img src="assets/img/ftci-group.jpg" alt="FTCI team volunteers gathering" class="w-full h-64 object-cover" loading="lazy">
+                <img src="assets/img/ftci-group.jpg.jpg" alt="Team Gathering" class="w-full h-64 object-cover">
             </div>
         </div>
     </div>
 </section>
 
 <!-- Volunteer Section -->
-<section id="volunteer" class="py-20 bg-white" role="region" aria-label="Get involved with FTCI">
+<section id="volunteer" class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Get Involved</h2>
-            <p class="text-gray-600 text-lg">Join FTCI and make a difference in Filipino communities</p>
+            <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Become a Volunteer</h2>
+            <p class="text-gray-600 text-lg">Join us in making a difference in Filipino communities</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="space-y-6">
                     <div class="card-hover bg-white p-6 rounded-lg border-l-4 border-green-500 shadow">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Why Get Involved?</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Why Volunteer?</h3>
                         <p class="text-gray-700">Make a direct impact on communities, develop new skills, meet like-minded individuals, and become part of a movement for positive change.</p>
                     </div>
                     <div class="card-hover bg-white p-6 rounded-lg border-l-4 border-green-500 shadow">
@@ -534,31 +465,31 @@
                 </div>
             </div>
             <div class="bg-gradient-to-br from-green-500 to-green-600 p-12 rounded-lg text-white">
-                <h3 class="text-3xl font-bold mb-6">Join FTCI Today</h3>
+                <h3 class="text-3xl font-bold mb-6">Ready to Make a Difference?</h3>
                 <form class="space-y-4" id="volunteer-form">
                     <div>
-                        <label for="fullname" class="block text-sm font-semibold mb-2">Full Name <span aria-label="required" class="text-red-300">*</span></label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Your name" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required aria-required="true">
+                        <label class="block text-sm font-semibold mb-2">Full Name</label>
+                        <input type="text" placeholder="Your name" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required>
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-semibold mb-2">Email <span aria-label="required" class="text-red-300">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required aria-required="true">
+                        <label class="block text-sm font-semibold mb-2">Email</label>
+                        <input type="email" placeholder="your@email.com" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required>
                     </div>
                     <div>
-                        <label for="phone" class="block text-sm font-semibold mb-2">Phone Number <span aria-label="required" class="text-red-300">*</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="+63" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required aria-required="true">
+                        <label class="block text-sm font-semibold mb-2">Phone Number</label>
+                        <input type="tel" placeholder="+63" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required>
                     </div>
                     <div>
-                        <label for="interest" class="block text-sm font-semibold mb-2">Area of Interest <span aria-label="required" class="text-red-300">*</span></label>
-                        <select id="interest" name="interest" class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required aria-required="true">
-                            <option value="">Select an option</option>
-                            <option value="youth">Youth Empowerment</option>
-                            <option value="environment">Environmental Action</option>
-                            <option value="community">Community Service</option>
+                        <label class="block text-sm font-semibold mb-2">Area of Interest</label>
+                        <select class="form-input w-full px-4 py-3 rounded-lg text-gray-900" required>
+                            <option>Select an option</option>
+                            <option>Youth Empowerment</option>
+                            <option>Environmental Action</option>
+                            <option>Community Service</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-hover w-full bg-white text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100" aria-label="Submit form to join FTCI">
-                        Join FTCI
+                    <button type="submit" class="btn-hover w-full bg-white text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100">
+                        Join as Volunteer
                     </button>
                 </form>
             </div>
@@ -567,21 +498,20 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="py-20 bg-gray-50" role="region" aria-label="Community testimonials">
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">What People Say</h2>
             <p class="text-gray-600 text-lg">Stories from our community members and volunteers</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article class="testimonial-card bg-white p-8 rounded-lg shadow" role="article" aria-label="Testimonial from Anna Mendoza">
+            <div class="testimonial-card bg-white p-8 rounded-lg shadow">
                 <div class="flex items-center mb-4">
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
-                    <span class="sr-only">5 out of 5 stars</span>
                 </div>
                 <p class="text-gray-700 mb-4 italic">"FTCI changed my life by helping me become a leader in my community. The programs are inspiring and well-organized!"</p>
                 <div class="flex items-center">
@@ -591,16 +521,15 @@
                         <p class="text-sm text-gray-600">Youth Leader, Quezon City</p>
                     </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="testimonial-card bg-white p-8 rounded-lg shadow" role="article" aria-label="Testimonial from Juan Reyes">
+            <div class="testimonial-card bg-white p-8 rounded-lg shadow">
                 <div class="flex items-center mb-4">
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
-                    <span class="sr-only">5 out of 5 stars</span>
                 </div>
                 <p class="text-gray-700 mb-4 italic">"As a volunteer, I've learned so much about environmental conservation and community development. FTCI truly cares about the planet!"</p>
                 <div class="flex items-center">
@@ -610,16 +539,15 @@
                         <p class="text-sm text-gray-600">Environmental Advocate</p>
                     </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="testimonial-card bg-white p-8 rounded-lg shadow" role="article" aria-label="Testimonial from Maria Cruz">
+            <div class="testimonial-card bg-white p-8 rounded-lg shadow">
                 <div class="flex items-center mb-4">
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
                     <i class="bi bi-star-fill text-yellow-400"></i>
-                    <span class="sr-only">5 out of 5 stars</span>
                 </div>
                 <p class="text-gray-700 mb-4 italic">"The gift-giving programs changed our children's lives. FTCI is a beacon of hope and generosity in our community!"</p>
                 <div class="flex items-center">
@@ -629,13 +557,13 @@
                         <p class="text-sm text-gray-600">Community Member</p>
                     </div>
                 </div>
-            </article>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
-<section class="py-20 bg-white" role="region" aria-label="Frequently asked questions">
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
@@ -643,11 +571,11 @@
         <div class="max-w-3xl mx-auto space-y-4">
             <details class="group border-l-4 border-green-500 p-6 bg-gray-50 rounded-lg cursor-pointer">
                 <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
-                    How can I support FTCI?
+                    How can I donate to FTCI?
                     <i class="bi bi-chevron-down group-open:rotate-180 transition-transform"></i>
                 </summary>
                 <p class="text-gray-700 mt-4 leading-relaxed">
-                    You can support FTCI by volunteering your time, donating through PayPal (https://paypal.me/ftci2006?country.x=PH&locale.x=en_US) or GCash (09272278612), or spreading the word about our mission. All contributions directly support our programs.
+                    You can donate through PayPal (https://paypal.me/ftci2006?country.x=PH&locale.x=en_US) or GCash (09272278612). All donations are transparent and directly support our programs.
                 </p>
             </details>
 
@@ -663,7 +591,7 @@
 
             <details class="group border-l-4 border-green-500 p-6 bg-gray-50 rounded-lg cursor-pointer">
                 <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
-                    What age can I volunteer?
+                    What age can you volunteer?
                     <i class="bi bi-chevron-down group-open:rotate-180 transition-transform"></i>
                 </summary>
                 <p class="text-gray-700 mt-4 leading-relaxed">
@@ -673,11 +601,11 @@
 
             <details class="group border-l-4 border-green-500 p-6 bg-gray-50 rounded-lg cursor-pointer">
                 <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
-                    How is my contribution used?
+                    How is my donation used?
                     <i class="bi bi-chevron-down group-open:rotate-180 transition-transform"></i>
                 </summary>
                 <p class="text-gray-700 mt-4 leading-relaxed">
-                    100% of donations support our youth empowerment programs, environmental initiatives, and community outreach. We maintain full transparency in our financial reporting and operations.
+                    100% of donations support our youth empowerment programs, environmental initiatives, and community outreach. We maintain full transparency in our financial reporting.
                 </p>
             </details>
         </div>
@@ -685,7 +613,7 @@
 </section>
 
 <!-- Partners Section -->
-<section class="py-20 bg-gray-50" role="region" aria-label="Partners and supporters">
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
             <h2 class="section-title text-4xl font-bold text-gray-900 mb-4">Our Partners & Supporters</h2>
@@ -708,30 +636,30 @@
     </div>
 </section>
 
-<!-- Contact & Support Section -->
-<section class="py-20 bg-gradient-to-r from-green-500 to-green-600 text-white" role="region" aria-label="Support FTCI">
+<!-- Contact & CTA Section -->
+<section id="donate-section" class="py-20 bg-gradient-to-r from-green-500 to-green-600 text-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Support Our Mission</h2>
-            <p class="text-xl opacity-90">Help us empower more youth and strengthen communities</p>
+            <h2 class="text-4xl font-bold mb-4">Make a Difference Today</h2>
+            <p class="text-xl opacity-90">Your support powers our mission to empower communities and youth</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="btn-hover bg-white text-green-600 p-8 rounded-lg text-center font-bold hover:shadow-xl transition" aria-label="Donate to FTCI via PayPal">
+            <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="btn-hover bg-white text-green-600 p-8 rounded-lg text-center font-bold hover:shadow-xl">
                 <i class="bi bi-paypal text-3xl mb-4 block"></i>
                 Donate via PayPal
             </a>
             <div class="btn-hover bg-white text-green-600 p-8 rounded-lg text-center">
                 <i class="bi bi-cash-coin text-3xl mb-4 block"></i>
                 <p class="font-bold">GCash: 09272278612</p>
-                <p class="text-sm opacity-75 mt-2">Mobile Money Support</p>
-                <button onclick="navigator.clipboard.writeText('09272278612'); alert('GCash number copied!')" class="mt-2 text-green-600 underline font-semibold hover:text-green-700 transition" aria-label="Copy GCash number to clipboard">Copy Number</button>
+                <p class="text-sm opacity-75 mt-2">Click to copy</p>
+                <button onclick="navigator.clipboard.writeText('09272278612'); alert('GCash number copied!')" class="mt-2 text-green-600 underline font-semibold hover:text-green-700">Copy Number</button>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-900 text-white" role="contentinfo">
+<footer class="bg-gray-900 text-white">
     <div class="container mx-auto px-4 py-16">
         <!-- Footer Content Grid -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -741,7 +669,7 @@
                     <i class="bi bi-leaf-fill text-green-500 mr-2"></i>FTCI
                 </h3>
                 <p class="text-gray-400 leading-relaxed">
-                    FANATXT TEXTERS CLUB INC. - Empowering youth, protecting the environment, and serving communities across the Philippines.
+                    Empowering youth, protecting the environment, and serving communities across the Philippines.
                 </p>
                 <div class="mt-4">
                     <p class="text-gray-500 text-sm">A registered nonprofit organization dedicated to positive social change.</p>
@@ -749,43 +677,43 @@
             </div>
 
             <!-- Quick Links -->
-            <nav>
+            <div>
                 <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2" role="list">
+                <ul class="space-y-2">
                     <li><a href="#home" class="text-gray-400 hover:text-green-500 transition">Home</a></li>
                     <li><a href="#about" class="text-gray-400 hover:text-green-500 transition">About Us</a></li>
-                    <li><a href="#programs" class="text-gray-400 hover:text-green-500 transition">Programs</a></li>
-                    <li><a href="#volunteer" class="text-gray-400 hover:text-green-500 transition">Get Involved</a></li>
+                    <li><a href="#volunteer" class="text-gray-400 hover:text-green-500 transition">Volunteer</a></li>
+                    <li><a href="#donate-section" class="text-gray-400 hover:text-green-500 transition">Donate</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Contact</a></li>
                 </ul>
-            </nav>
+            </div>
 
             <!-- Programs -->
-            <nav>
+            <div>
                 <h4 class="text-lg font-bold mb-4">Our Programs</h4>
-                <ul class="space-y-2" role="list">
-                    <li><a href="#programs" class="text-gray-400 hover:text-green-500 transition">Youth Empowerment</a></li>
-                    <li><a href="#programs" class="text-gray-400 hover:text-green-500 transition">Environmental Action</a></li>
-                    <li><a href="#programs" class="text-gray-400 hover:text-green-500 transition">Community Service</a></li>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Youth Empowerment</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Environmental Action</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Community Service</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Gift-Giving Projects</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-green-500 transition">Outreach Programs</a></li>
                 </ul>
-            </nav>
+            </div>
 
-            <!-- Support Info -->
+            <!-- Donation Info -->
             <div>
-                <h4 class="text-lg font-bold mb-4">Support FTCI</h4>
+                <h4 class="text-lg font-bold mb-4">Support Us</h4>
                 <div class="space-y-4">
                     <div>
                         <p class="text-gray-500 text-sm mb-2">PayPal Donations</p>
-                        <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 px-4 py-2 rounded font-semibold text-sm transition" aria-label="Donate via PayPal">
+                        <a href="https://paypal.me/ftci2006?country.x=PH&locale.x=en_US" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 px-4 py-2 rounded font-semibold text-sm transition">
                             <i class="bi bi-paypal mr-2"></i>Donate
                         </a>
                     </div>
                     <div>
                         <p class="text-gray-500 text-sm mb-2">GCash</p>
                         <p class="font-mono text-green-400 font-bold">09272278612</p>
-                        <button onclick="navigator.clipboard.writeText('09272278612'); alert('Copied!')" class="text-gray-400 hover:text-green-500 text-sm mt-1 transition" aria-label="Copy GCash number">
+                        <button onclick="navigator.clipboard.writeText('09272278612'); alert('Copied!')" class="text-gray-400 hover:text-green-500 text-sm mt-1 transition">
                             <i class="bi bi-files mr-1"></i>Copy
                         </button>
                     </div>
@@ -821,13 +749,13 @@
             <div>
                 <h4 class="text-lg font-bold mb-4">Follow Us</h4>
                 <div class="flex gap-4">
-                    <a href="https://www.facebook.com/ftci2006" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110" aria-label="Visit FTCI on Facebook">
+                    <a href="https://www.facebook.com/ftci2006" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
                         <i class="bi bi-facebook text-xl"></i>
                     </a>
-                    <a href="https://www.youtube.com/@ftci" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110" aria-label="Visit FTCI on YouTube">
+                    <a href="https://www.youtube.com/@ftci" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
                         <i class="bi bi-youtube text-xl"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@ftci2k6?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110" aria-label="Visit FTCI on TikTok">
+                    <a href="https://www.tiktok.com/@ftci2k6?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition transform hover:scale-110">
                         <i class="bi bi-tiktok text-xl"></i>
                     </a>
                 </div>
@@ -854,25 +782,15 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Enhanced Custom Scripts -->
+<!-- Custom Scripts -->
 <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 
-                mobileMenuBtn.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
-        });
 
-        // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
         });
     }
 
@@ -886,6 +804,10 @@
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Close mobile menu if open
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
             }
         });
     });
@@ -895,24 +817,10 @@
     if (volunteerForm) {
         volunteerForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const fullname = document.getElementById('fullname').value;
-            alert(`Thank you, ${fullname}! We will contact you soon to welcome you to FTCI.`);
+            alert('Thank you for your interest! We will contact you soon.');
             this.reset();
         });
     }
-
-    // Keyboard Navigation - Close mobile menu on Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const menu = document.getElementById('mobile-menu');
-            if (menu && menu.classList.contains('active')) {
-                menu.classList.remove('active');
-                if (mobileMenuBtn) {
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                }
-            }
-        }
-    });
 </script>
 
 </body>
