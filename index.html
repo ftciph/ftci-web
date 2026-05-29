@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- SEO Meta Tags for Search Engines -->
-    <meta name="description" content="FTCI (FANATXT TEXTERS CLUB INC.) - Empowering Filipino youth through leadership development, environmental conservation, and community service programs. Join us in making a difference!" />
-    <meta name="keywords" content="FTCI, FANATXT TEXTERS CLUB, nonprofit, youth empowerment, environmental action, community service, Philippines, volunteer, gift-giving, feeding program" />
+    <meta name="description" content="FTCI (FANATXT TEXTERS CLUB INC.) - Empowering Filipino youth through leadership development, environmental conservation, and community service programs. View our projects and gallery of impact." />
+    <meta name="keywords" content="FTCI, FANATXT TEXTERS CLUB, nonprofit, youth empowerment, environmental action, community service, Philippines, volunteer, gift-giving, feeding program, gallery, projects" />
     <meta name="author" content="FANATXT TEXTERS CLUB INC." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#22c55e" />
 
     <!-- Open Graph Tags for Facebook, LinkedIn, Pinterest -->
-    <meta property="og:title" content="FTCI - FANATXT TEXTERS CLUB INC. - Youth Empowerment & Community Service" />
-    <meta property="og:description" content="Join FTCI in transforming lives through youth leadership, environmental conservation, and community service. Make a difference today!" />
+    <meta property="og:title" content="FTCI - Our Projects & Gallery - Youth Empowerment & Community Service" />
+    <meta property="og:description" content="View FTCI's impact through our gallery of projects. Gift Giving Programs, Feeding Programs, Volunteer Activities, and Community Service." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ftciph.org" />
-    <meta property="og:image" content="assets/img/ftci-group.jpg" />
+    <meta property="og:image" content="assets/img/ftci-giftgiving2025.jpg" />
     <meta property="og:site_name" content="FTCI" />
 
     <!-- Twitter Card Tags for better social sharing -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FTCI - FANATXT TEXTERS CLUB INC." />
-    <meta name="twitter:description" content="A nonprofit dedicated to youth empowerment, environmental action, and community service in the Philippines." />
-    <meta name="twitter:image" content="assets/img/ftci-group.jpg" />
+    <meta name="twitter:title" content="FTCI - Our Projects & Gallery" />
+    <meta name="twitter:description" content="See the impact FTCI is making in Philippine communities through our project galleries." />
+    <meta name="twitter:image" content="assets/img/ftci-giftgiving2025.jpg" />
 
-    <title>FTCI - FANATXT TEXTERS CLUB INC. | Youth Empowerment & Community Service</title>
+    <title>FTCI - Our Projects & Gallery | Youth Empowerment & Community Service</title>
 
     <link rel="icon" type="image/png" href="/assets/ftci-logo.png" />
 
@@ -37,6 +37,9 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- GLightbox for Gallery Lightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <!-- Core Theme CSS -->
     <link href="css/styles.css" rel="stylesheet" />
@@ -112,10 +115,12 @@
             overflow: hidden;
             border-radius: 0.5rem;
             position: relative;
+            cursor: pointer;
+            background: #f3f4f6;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .gallery-item img {
@@ -123,6 +128,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .gallery-overlay {
@@ -131,11 +137,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(34, 197, 94, 0.8);
             opacity: 0;
             transition: opacity 0.3s ease;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 1rem;
         }
 
@@ -143,10 +151,18 @@
             opacity: 1;
         }
 
+        .gallery-overlay-icon {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
         .gallery-caption {
             color: white;
             font-size: 0.9rem;
             line-height: 1.4;
+            text-align: center;
+            font-weight: 500;
         }
 
         /* Section Styling */
@@ -184,6 +200,7 @@
         .tab-btn.active {
             background: #22c55e;
             color: white;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
         .tab-btn:hover {
@@ -193,11 +210,48 @@
 
         .tab-content {
             display: none;
+            animation: fadeIn 0.5s ease-out;
         }
 
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #22c55e;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         /* Testimonial Carousel */
@@ -235,6 +289,20 @@
         .mobile-menu-btn:focus-visible {
             outline: 2px solid #22c55e;
             outline-offset: 2px;
+        }
+
+        /* Image counter badge */
+        .image-counter {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(34, 197, 94, 0.9);
+            color: white;
+            padding: 0.35rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
         }
 
         @media (max-width: 768px) {
@@ -282,6 +350,10 @@
                 margin-right: 0.25rem;
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem;
+            }
+
+            .gallery-item {
+                height: 180px;
             }
         }
     </style>
@@ -353,7 +425,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-                <img src="assets/img/ftci-chilfren2025.jpg" alt="FTCI Community" class="rounded-lg shadow-lg w-full">
+                <img src="assets/img/ftci-chilfren2025.jpg" alt="FTCI Community Members" class="rounded-lg shadow-lg w-full" loading="lazy">
             </div>
             <div>
                 <h3 class="text-3xl font-bold text-gray-900 mb-6">Who We Are</h3>
@@ -489,127 +561,142 @@
 
         <!-- Tab Buttons -->
         <div class="flex flex-wrap justify-center mb-12 gap-2">
-            <button class="tab-btn active" onclick="showTab('gift-2025')">
+            <button class="tab-btn active" onclick="showTab('gift-2025', event)">
                 <i class="bi bi-gift mr-2"></i>Gift Giving 2025
             </button>
-            <button class="tab-btn" onclick="showTab('gift-2024')">
+            <button class="tab-btn" onclick="showTab('gift-2024', event)">
                 <i class="bi bi-gift mr-2"></i>Gift Giving 2024
             </button>
-            <button class="tab-btn" onclick="showTab('feeding')">
+            <button class="tab-btn" onclick="showTab('feeding', event)">
                 <i class="bi bi-cup-hot mr-2"></i>Feeding Program
             </button>
-            <button class="tab-btn" onclick="showTab('volunteer')">
+            <button class="tab-btn" onclick="showTab('volunteer', event)">
                 <i class="bi bi-people-fill mr-2"></i>Volunteer Activities
             </button>
         </div>
 
         <!-- Gift Giving 2025 Tab -->
         <div id="gift-2025" class="tab-content active">
-            <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-green-500">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Gift Giving Project 2025</h3>
-                <p class="text-gray-700 mb-4">
-                    Our Gift Giving Project 2025 brings joy and hope to families in underserved communities. Through generous donations and volunteer efforts, we distribute gifts to children and essential items to families in need.
-                </p>
-                <div class="flex gap-4 text-sm text-gray-600">
-                    <span><i class="bi bi-calendar-event mr-1"></i>Ongoing</span>
-                    <span><i class="bi bi-geo-alt mr-1"></i>Multiple Communities</span>
+            <div class="project-card">
+                <h3><i class="bi bi-gift text-green-500 mr-2"></i>Gift Giving Project 2025</h3>
+                <p>Our Gift Giving Project 2025 brings joy and hope to families in underserved communities. Through generous donations and volunteer efforts, we distribute gifts to children and essential items to families in need. This initiative demonstrates FTCI's commitment to community support and compassion.</p>
+                <div class="project-meta">
+                    <span><i class="bi bi-calendar-event"></i>Ongoing</span>
+                    <span><i class="bi bi-geo-alt"></i>Multiple Communities</span>
+                    <span><i class="bi bi-images"></i>1 photo</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item bg-gray-200 h-64">
-                    <img src="assets/img/ftci-giftgiving2025.jpg" alt="Gift Giving 2025 - Children receiving gifts" loading="lazy">
+                <a href="assets/img/ftci-giftgiving2025.jpg" class="glightbox gallery-item h-64 relative group">
+                    <img src="assets/img/ftci-giftgiving2025.jpg" alt="Gift Giving 2025 - Children receiving gifts and joy" loading="lazy" title="Gift Giving Project 2025">
+                    <div class="image-counter">1 / 1</div>
                     <div class="gallery-overlay">
-                        <p class="gallery-caption">Children receiving gifts with smiles</p>
+                        <i class="bi bi-search gallery-overlay-icon"></i>
+                        <p class="gallery-caption">Click to view full gallery</p>
                     </div>
-                </div>
-                <!-- Add more items as photos are uploaded -->
+                </a>
             </div>
-            <p class="text-center text-gray-500 mt-8 text-sm">
-                <i class="bi bi-image mr-2"></i>More photos coming as we continue this project!
+            <p class="text-center text-gray-600 mt-8 text-sm p-4 bg-white rounded-lg border border-gray-200">
+                <i class="bi bi-lightbulb text-yellow-500 mr-2"></i>More photos from this project will be added soon! Share your gift-giving moments with us.
             </p>
         </div>
 
         <!-- Gift Giving 2024 Tab -->
         <div id="gift-2024" class="tab-content">
-            <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-green-500">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Gift Giving Project 2024</h3>
-                <p class="text-gray-700 mb-4">
-                    In 2024, FTCI successfully distributed gifts to hundreds of families across the Philippines. This project showcased our commitment to bringing happiness and hope to communities most in need.
-                </p>
-                <div class="flex gap-4 text-sm text-gray-600">
-                    <span><i class="bi bi-calendar-event mr-1"></i>Completed 2024</span>
-                    <span><i class="bi bi-geo-alt mr-1"></i>Philippines</span>
+            <div class="project-card">
+                <h3><i class="bi bi-gift text-green-500 mr-2"></i>Gift Giving Project 2024</h3>
+                <p>In 2024, FTCI successfully distributed gifts to hundreds of families across the Philippines. This project showcased our commitment to bringing happiness and hope to communities most in need. We reached diverse locations and touched countless lives through this meaningful initiative.</p>
+                <div class="project-meta">
+                    <span><i class="bi bi-calendar-event"></i>Completed 2024</span>
+                    <span><i class="bi bi-geo-alt"></i>Philippines</span>
+                    <span><i class="bi bi-images"></i>1 photo</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item bg-gray-200 h-64">
-                    <img src="assets/img/ftci-giftgiving2023.jpg" alt="Gift Giving 2024 Event" loading="lazy">
+                <a href="assets/img/ftci-giftgiving2023.jpg" class="glightbox gallery-item h-64 relative group">
+                    <img src="assets/img/ftci-giftgiving2023.jpg" alt="Gift Giving 2024 - Community distribution event" loading="lazy" title="Gift Giving Project 2024">
+                    <div class="image-counter">1 / 1</div>
                     <div class="gallery-overlay">
-                        <p class="gallery-caption">2024 Gift Distribution Event</p>
+                        <i class="bi bi-search gallery-overlay-icon"></i>
+                        <p class="gallery-caption">Click to view full gallery</p>
                     </div>
-                </div>
-                <!-- Add more items as photos are uploaded -->
+                </a>
             </div>
-            <p class="text-center text-gray-500 mt-8 text-sm">
-                <i class="bi bi-image mr-2"></i>Share your favorite moments from 2024!
+            <p class="text-center text-gray-600 mt-8 text-sm p-4 bg-white rounded-lg border border-gray-200">
+                <i class="bi bi-archive text-gray-500 mr-2"></i>This gallery showcases the success of our 2024 Gift Giving Program.
             </p>
         </div>
 
         <!-- Feeding Program Tab -->
         <div id="feeding" class="tab-content">
-            <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-green-500">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Feeding Program</h3>
-                <p class="text-gray-700 mb-4">
-                    FTCI's Feeding Program ensures that no child goes hungry. We regularly organize feeding activities in underserved communities, providing nutritious meals and nutrition education to children.
-                </p>
-                <div class="flex gap-4 text-sm text-gray-600">
-                    <span><i class="bi bi-calendar-event mr-1"></i>Regular Program</span>
-                    <span><i class="bi bi-geo-alt mr-1"></i>Local Communities</span>
+            <div class="project-card">
+                <h3><i class="bi bi-cup-hot text-green-500 mr-2"></i>Feeding Program</h3>
+                <p>FTCI's Feeding Program ensures that no child goes hungry. We regularly organize feeding activities in underserved communities, providing nutritious meals and nutrition education to children. This program addresses food insecurity while building healthier, stronger communities through sustainable nutrition initiatives.</p>
+                <div class="project-meta">
+                    <span><i class="bi bi-calendar-event"></i>Regular Program</span>
+                    <span><i class="bi bi-geo-alt"></i>Local Communities</span>
+                    <span><i class="bi bi-exclamation-circle"></i>Ready for photos</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Placeholder for feeding program photos -->
-                <div class="gallery-item bg-gradient-to-br from-green-100 to-green-50 h-64 flex items-center justify-center">
-                    <div class="text-center text-gray-500">
-                        <i class="bi bi-cup-hot text-4xl mb-2 block"></i>
-                        <p>Feeding Program Photos</p>
+                <div class="gallery-item h-64 flex items-center justify-center bg-gradient-to-br from-green-100 to-green-50 border-2 border-dashed border-green-300">
+                    <div class="text-center">
+                        <i class="bi bi-cloud-upload text-4xl text-green-600 mb-2 block"></i>
+                        <p class="text-green-700 font-semibold">Ready for Photos</p>
+                        <p class="text-sm text-green-600">Upload feeding program photos</p>
                     </div>
                 </div>
             </div>
-            <p class="text-center text-gray-500 mt-8 text-sm">
-                <i class="bi bi-image mr-2"></i>Photos will be added soon! Share your feeding program stories.
+            <p class="text-center text-gray-600 mt-8 text-sm p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <i class="bi bi-info-circle text-blue-600 mr-2"></i>This gallery is ready for your feeding program photos! Contact us to contribute photos from your community.
             </p>
         </div>
 
         <!-- Volunteer Activities Tab -->
-        <div id="volunteer-activities" class="tab-content">
-            <div class="mb-8 p-6 bg-white rounded-lg shadow-md border-l-4 border-green-500">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Volunteer Activities</h3>
-                <p class="text-gray-700 mb-4">
-                    Our volunteers are the heart of FTCI. From tree-planting drives to community clean-ups, from tutoring sessions to outreach programs, our volunteers make meaningful change every day.
-                </p>
-                <div class="flex gap-4 text-sm text-gray-600">
-                    <span><i class="bi bi-calendar-event mr-1"></i>Year-Round</span>
-                    <span><i class="bi bi-geo-alt mr-1"></i>Various Locations</span>
+        <div id="volunteer" class="tab-content">
+            <div class="project-card">
+                <h3><i class="bi bi-people-fill text-green-500 mr-2"></i>Volunteer Activities</h3>
+                <p>Our volunteers are the heart of FTCI. From tree-planting drives to community clean-ups, from tutoring sessions to outreach programs, our volunteers make meaningful change every day. These dedicated individuals embody our values of service, commitment, and community impact.</p>
+                <div class="project-meta">
+                    <span><i class="bi bi-calendar-event"></i>Year-Round</span>
+                    <span><i class="bi bi-geo-alt"></i>Various Locations</span>
+                    <span><i class="bi bi-images"></i>3 photos</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-item bg-gray-200 h-64">
-                    <img src="assets/img/ftci-chilfren2023.jpg" alt="Volunteers at Work" loading="lazy">
+                <a href="assets/img/ftci-chilfren2023.jpg" class="glightbox gallery-item h-64 relative group">
+                    <img src="assets/img/ftci-chilfren2023.jpg" alt="Volunteer Activities - Team in action" loading="lazy" title="Volunteer Team at Work">
+                    <div class="image-counter">1 / 3</div>
                     <div class="gallery-overlay">
-                        <p class="gallery-caption">Our dedicated volunteer team in action</p>
+                        <i class="bi bi-search gallery-overlay-icon"></i>
+                        <p class="gallery-caption">Volunteers making a difference</p>
                     </div>
-                </div>
-                <!-- Add more items as photos are uploaded -->
+                </a>
+                <a href="assets/img/ftci-outreach1.jpg" class="glightbox gallery-item h-64 relative group">
+                    <img src="assets/img/ftci-outreach1.jpg" alt="Volunteer Activities - Outreach program in progress" loading="lazy" title="Community Outreach">
+                    <div class="image-counter">2 / 3</div>
+                    <div class="gallery-overlay">
+                        <i class="bi bi-search gallery-overlay-icon"></i>
+                        <p class="gallery-caption">Outreach in action</p>
+                    </div>
+                </a>
+                <a href="assets/img/ftci-chilfren2025.jpg" class="glightbox gallery-item h-64 relative group">
+                    <img src="assets/img/ftci-chilfren2025.jpg" alt="Volunteer Activities - Youth engagement" loading="lazy" title="Youth Volunteer Engagement">
+                    <div class="image-counter">3 / 3</div>
+                    <div class="gallery-overlay">
+                        <i class="bi bi-search gallery-overlay-icon"></i>
+                        <p class="gallery-caption">Youth involvement</p>
+                    </div>
+                </a>
             </div>
-            <p class="text-center text-gray-500 mt-8 text-sm">
-                <i class="bi bi-image mr-2"></i>Be part of our volunteer community!
+            <p class="text-center text-gray-600 mt-8 text-sm p-4 bg-white rounded-lg border border-gray-200">
+                <i class="bi bi-hand-thumbs-up text-green-600 mr-2"></i>Join our volunteer community! Your effort makes a real difference.
             </p>
         </div>
     </div>
 </section>
 
-<!-- Photo Gallery -->
+<!-- Photo Highlights Section -->
 <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16">
@@ -617,24 +704,42 @@
             <p class="text-gray-600 text-lg">Glimpses of our community in action</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-chilfren2025.jpg" alt="Youth Program" loading="lazy">
-            </div>
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-outreach1.jpg" alt="Outreach Program" loading="lazy">
-            </div>
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-giftgiving2025.jpg" alt="Gift Giving" loading="lazy">
-            </div>
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-giftgiving2023.jpg" alt="Community Service" loading="lazy">
-            </div>
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-chilfren2023.jpg" alt="Youth Engagement" loading="lazy">
-            </div>
-            <div class="gallery-item bg-gray-200 h-64">
-                <img src="assets/img/ftci-group.jpg.jpg" alt="Team Gathering" loading="lazy">
-            </div>
+            <a href="assets/img/ftci-chilfren2025.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-chilfren2025.jpg" alt="Youth Program participants" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
+            <a href="assets/img/ftci-outreach1.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-outreach1.jpg" alt="Community Outreach Program" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
+            <a href="assets/img/ftci-giftgiving2025.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-giftgiving2025.jpg" alt="Gift Giving Initiative" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
+            <a href="assets/img/ftci-giftgiving2023.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-giftgiving2023.jpg" alt="Community Service Event" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
+            <a href="assets/img/ftci-chilfren2023.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-chilfren2023.jpg" alt="Youth Engagement Activity" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
+            <a href="assets/img/ftci-outreach.pjp.jpg" class="glightbox gallery-item h-64">
+                <img src="assets/img/ftci-outreach.pjp.jpg" alt="Team Gathering and Collaboration" loading="lazy">
+                <div class="gallery-overlay">
+                    <i class="bi bi-search gallery-overlay-icon"></i>
+                </div>
+            </a>
         </div>
     </div>
 </section>
@@ -882,7 +987,7 @@
                     <li><a href="#home" class="text-gray-400 hover:text-green-500 transition">Home</a></li>
                     <li><a href="#about" class="text-gray-400 hover:text-green-500 transition">About Us</a></li>
                     <li><a href="#projects" class="text-gray-400 hover:text-green-500 transition">Projects</a></li>
-                    <li><a href="#volunteer" class="text-gray-400 hover:text-green-500 transition">Volunteer</a></li>
+                    <li><a href="#volunteer-section" class="text-gray-400 hover:text-green-500 transition">Volunteer</a></li>
                     <li><a href="#donate-section" class="text-gray-400 hover:text-green-500 transition">Donate</a></li>
                 </ul>
             </div>
@@ -984,8 +1089,18 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- GLightbox for Gallery Lightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
 <!-- Custom Scripts -->
 <script>
+    // Initialize GLightbox
+    const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+    });
+
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -997,7 +1112,9 @@
     }
 
     // Tab functionality
-    function showTab(tabName) {
+    function showTab(tabName, event) {
+        event.preventDefault();
+        
         // Hide all tab contents
         const tabContents = document.querySelectorAll('.tab-content');
         tabContents.forEach(tab => {
@@ -1017,14 +1134,17 @@
         }
 
         // Add active class to clicked button
-        event.target.classList.add('active');
+        event.target.closest('.tab-btn').classList.add('active');
     }
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href.startsWith('#') === false) return;
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
